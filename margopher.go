@@ -11,6 +11,10 @@ import (
 	"strings"
 )
 
+const (
+	Seperator = "%%%"
+)
+
 type margopher struct {
 	states map[[2]string][]string
 }
