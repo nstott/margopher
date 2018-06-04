@@ -123,6 +123,7 @@ func getRandomWord(slice []string) string {
 }
 
 func isTerminalWord(word string) bool {
-	match, _ := regexp.MatchString("(\\.|,|:|;|\\?|!)$", word)
+// 	match, _ := regexp.MatchString("(\\.|,|:|;|\\?|!)$", word)
+	match, _ := regexp.MatchString("(%%%)$", word)
 	return match
 }
