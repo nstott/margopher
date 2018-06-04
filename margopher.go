@@ -19,13 +19,11 @@ func New() *margopher {
 	return &margopher{}
 }
 
-func (m *margopher) ReadText(text string) string {
+func (m *margopher) ReadText(text string)  {
 	m.parse(text)
-
-	return m.generate()
 }
 
-func (m *margopher) ReadFile(filePath string) string {
+func (m *margopher) ReadFile(filePath string) {
 	// Open the file
 	file, err := os.Open(filePath)
 	if err != nil {
@@ -39,11 +37,9 @@ func (m *margopher) ReadFile(filePath string) string {
 	}
 
 	m.parse(string(text))
-
-	return m.generate()
 }
 
-func (m *margopher) ReadURL(URL string) string {
+func (m *margopher) ReadURL(URL string) {
 	// Open web page
 	doc, err := goquery.NewDocument(URL)
 	if err != nil {
@@ -55,8 +51,6 @@ func (m *margopher) ReadURL(URL string) string {
 		text := s.Find("p").Text()
 		m.parse(text)
 	})
-
-	return m.generate()
 }
 
 func (m *margopher) StateDictionary() map[[2]string][]string {
