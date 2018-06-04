@@ -84,7 +84,7 @@ func (m *margopher) parse(text string) {
 }
 
 // Generate margopher senetence based on a given length
-func (m *margopher) generate() string {
+func (m *margopher) Generate() string {
 	var sentence bytes.Buffer
 
 	// Initialize prefix with a random key
